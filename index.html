@@ -42,7 +42,11 @@
                 </label>
                 <br>
                 <br>
+                <div class="create-button">
                 <button>Create Poll</button>
+                </div>
+
+                </form>
             </form>
         </section>
 
@@ -50,19 +54,23 @@
             <h1>Current Poll</h1>
             <h2 id="question"></h2>
             <div id="options">
-                <div class="option"
+                <div class="option" class="option-a"
                 <span id="option-a"></span>
                 </div>
             <br>
+            <div class="button-container">
             <button id="vote-a">Vote A: 0</button>
+            <button id="subtract-vote-a">Subtract Vote A</button>
+            </div>
             
-            
-            <div class="option">
+            <div class="option" class="option-b">
                 <span id="option-b"></span>
                 </div>
             <br>
+            <div class="button-container">
             <button id="vote-b">Vote B: 0</button>
-
+            <button id="subtract-vote-b">Subtract Vote B</button>
+            </div>
                 
             </div>
             <br>
@@ -70,7 +78,7 @@
         </section>
 
         <section>
-            <h1>Past Polls</h1>
+            <h1 class="past-text">Past Polls</h1>
             <div id="poll-list" class="poll-list">
                 <div class="poll-detail">
                 </div>

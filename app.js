@@ -10,6 +10,8 @@ import { renderPoll } from './render.js';
 const createPoll = document.getElementById('create-poll');
 const voteA = document.getElementById('vote-a');
 const voteB = document.getElementById('vote-b');
+const subtractA = document.getElementById('subtract-vote-a');
+const subtractB = document.getElementById('subtract-vote-b');
 const closePoll = document.getElementById('close-poll');
 // let state
 let question = '';
@@ -38,6 +40,16 @@ voteA.addEventListener('click', () => {
 voteB.addEventListener('click', () => {
     optionBVotes++;
     voteB.textContent = `Vote B:${optionBVotes}`;
+});
+
+subtractA.addEventListener('click', () => {
+    optionAVotes--;
+    displayCurrentPoll(); 
+});
+
+subtractB.addEventListener('click', () => {
+    optionBVotes--;
+    displayCurrentPoll();
 });
 
 closePoll.addEventListener('click', async () => {
@@ -84,11 +96,3 @@ async function displayPolls() {
 }
 
 displayPolls();
-
-
-
-
-
-// get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
