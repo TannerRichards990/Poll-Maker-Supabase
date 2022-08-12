@@ -1,4 +1,4 @@
-export function renderpoll(poll) {
+export function renderPoll(poll) {
     const container = document.createElement('div');
     container.classList.add ('poll-detail');
 

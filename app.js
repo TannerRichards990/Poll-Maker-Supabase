@@ -1,4 +1,9 @@
 // import functions and grab DOM elements
+import { createNewPoll, getPolls } from './fetch-utils.js';
+import { renderPoll } from './render.js';
+
+
+
 
 
 
@@ -44,6 +49,14 @@ closePoll.addEventListener('click', async () => {
         option_b_votes: optionBVotes,
     };
     const response = await createNewPoll(data);
+    question = '';
+    optionA = '';
+    optionB = '';
+    optionAVotes = 0;
+    optionBVotes = 0;
+
+    displayCurrentPoll();
+    displayPolls();
 
 });
 
