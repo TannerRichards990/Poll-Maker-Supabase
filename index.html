@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <title>Web App</title>
 </head>
 
@@ -29,7 +30,7 @@
             <form id="create-poll">
                 <label>
                     Question:
-                    <input class="input" type="text" name="Question"/>
+                    <input class="input" type="text" name="question"/>
                 </label>
                 <label>
                     Option A:
@@ -51,19 +52,27 @@
             <div id="options">
                 <div class="option"
                 <span id="option-a"></span>
-                <button id="vote-a">Vote A: 0</button>
-            </div>
+                </div>
+            <br>
+            <button id="vote-a">Vote A: 0</button>
+            
+            
             <div class="option">
                 <span id="option-b"></span>
-                <button id="vote-b">Vote B: 0</button>
+                </div>
+            <br>
+            <button id="vote-b">Vote B: 0</button>
+
+                
             </div>
-            </div>
+            <br>
+            <button id="close-poll">Close Poll</button>
         </section>
 
         <section>
             <h1>Past Polls</h1>
             <div id="poll-list" class="poll-list">
-                <div class="poll detail">
+                <div class="poll-detail">
                 </div>
             </div>
         </section>

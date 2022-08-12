@@ -15,8 +15,8 @@ const closePoll = document.getElementById('close-poll');
 let question = '';
 let optionA = '';
 let optionB = '';
-let optionAVotes = '';
-let optionBVotes = '';
+let optionAVotes = 0;
+let optionBVotes = 0;
 // set event listeners 
 
 createPoll.addEventListener ('submit', (e) => {
@@ -32,12 +32,12 @@ createPoll.addEventListener ('submit', (e) => {
 
 voteA.addEventListener('click', () => {
     optionAVotes++;
-    voteA.textContent = optionAVotes;
+    voteA.textContent = `Vote A:${optionAVotes}`;
 });
 
 voteB.addEventListener('click', () => {
     optionBVotes++;
-    voteB.textContent = optionBVotes;
+    voteB.textContent = `Vote B:${optionBVotes}`;
 });
 
 closePoll.addEventListener('click', async () => {
@@ -48,7 +48,7 @@ closePoll.addEventListener('click', async () => {
         option_a_votes: optionAVotes,
         option_b_votes: optionBVotes,
     };
-    const response = await createNewPoll(data);
+    await createNewPoll(data);
     question = '';
     optionA = '';
     optionB = '';
@@ -64,16 +64,26 @@ closePoll.addEventListener('click', async () => {
 
 function displayCurrentPoll() {
     const questionEl = document.getElementById('question');
-    questionEl.textContent = '';
+    questionEl.textContent = question;
     const optionAEl = document.getElementById('option-a');
     optionAEl.textContent = optionA;
-    const optionBEl = document.getElementById('optionB');
+    const optionBEl = document.getElementById('option-b');
     optionBEl.textContent = optionB;
-    voteA.textContent = optionAVotes;
-    voteB.textContent = optionBVotes;
+    voteA.textContent = `Vote A:${optionAVotes}`;
+    voteB.textContent = `Vote B:${optionBVotes}`;
 } 
 
+async function displayPolls() {
+    const pollList = document.getElementById('poll-list');
+    pollList.textContent = '';
+    const polls = await getPolls();
+    for (let poll of polls) {
+        const div = renderPoll(poll);
+        pollList.append(div);
+    }
+}
 
+displayPolls();
 
 
 
