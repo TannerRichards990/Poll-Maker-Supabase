@@ -44,8 +44,28 @@ closePoll.addEventListener('click', async () => {
         option_b_votes: optionBVotes,
     };
     const response = await createNewPoll(data);
-    
+
 });
-  // get user input
+
+
+
+function displayCurrentPoll() {
+    const questionEl = document.getElementById('question');
+    questionEl.textContent = '';
+    const optionAEl = document.getElementById('option-a');
+    optionAEl.textContent = optionA;
+    const optionBEl = document.getElementById('optionB');
+    optionBEl.textContent = optionB;
+    voteA.textContent = optionAVotes;
+    voteB.textContent = optionBVotes;
+} 
+
+
+
+
+
+
+
+// get user input
   // use user input to update state 
   // update DOM to reflect the new state
