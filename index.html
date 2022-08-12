@@ -12,6 +12,8 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Web App</title>
 </head>
 
@@ -22,6 +24,49 @@
     </header>
 
     <main>
+        <section id="create">
+            <h1>Create New Poll</h1>
+            <form id="create-poll">
+                <label>
+                    Question:
+                    <input class="input" type="text" name="Question"/>
+                </label>
+                <label>
+                    Option A:
+                    <input class="input" type="text" name="option-a"/>
+                </label>
+                <label>
+                    Option B:
+                    <input class="input" type="text" name="option-b"/>
+                </label>
+                <br>
+                <br>
+                <button>Create Poll</button>
+            </form>
+        </section>
+
+        <section id="current-poll">
+            <h1>Current Poll</h1>
+            <h2 id="question"></h2>
+            <div id="option">
+                <div class="option"
+                <span id="option-a"></span>
+                <button id="vote-a">Vote A: 0</button>
+            </div>
+            <div class="option">
+                <span id="option-b"></span>
+                <button id="vote-b">Vote B :0</button>
+            </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>Past Polls</h1>
+            <div id="poll-list" class="poll-list">
+                <div class="poll detail">
+                </div>
+            </div>
+        </section>
 
     </main>
 
