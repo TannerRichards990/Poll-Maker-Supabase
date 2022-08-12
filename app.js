@@ -96,3 +96,5 @@ async function displayPolls() {
 }
 
 displayPolls();
+
+//netlify fix
