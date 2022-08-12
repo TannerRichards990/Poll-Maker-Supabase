@@ -24,3 +24,60 @@ Additional considerations:
   - What needs to live in a persistence layer?
 - Is there some state we need to initialize?
 - Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+
+
+User Story:
+
+##HTML:
+
+- Poll creation form (#create-poll)
+
+  Question input
+  Answer A input
+  Answer B input
+  Button Start Poll
+
+- Current Poll Container
+  <div> for the question and options.
+  buttons for A, B (#vote-A), (#vote-B)
+  button to close poll
+  span for option a votes
+  span for option b votes
+
+- List of past polls
+ <ul> for listing the polls
+ <li> for displaying the polls
+
+ ##State:
+
+ Votes (string-int)
+ Question 
+ OptionA (varchar)
+ OptionB (varchar)
+
+ Supabase Table setup:
+ polls columns: option_a_votes, option_b_votes, option_a, option_b, question
+
+- Events:
+-create poll on submit
+ create Formdata for form
+ use the FormData to create poll
+ clear out teh form
+
+- #vote a / #vote b onClick
+
+increment the votes
+inject into the HTML
+
+-Close poll
+create an object w/ our state
+send that object to supabase
+rerender the list on past polls
+
+##Functions :
+
+-Displaypolls();
+renderpoll
+displaycurrentpoll
+createpoll
+getpolls 
